@@ -40,7 +40,7 @@ class LoginRequest extends FormRequest
      */
     public function authenticate()
     {
-        if (! Auth::attempt($this->only('username', 'password'))) {
+        if (! Auth::attempt($this->only('username', 'password'), true)) {
             throw ValidationException::withMessages([
                 'username' => __('auth.failed'),
             ]);

@@ -10,6 +10,13 @@ class User extends Authenticatable
     use HasFactory;
 
     /**
+     * The primary key associated with the table.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'uid';
+
+    /**
      * Indicates if the model's ID is auto-incrementing.
      *
      * @var bool
@@ -45,6 +52,8 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
+        'remember_token',
+        'api_token'
     ];
 
     /**

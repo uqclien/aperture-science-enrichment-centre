@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->date('date_of_birth')->nullable();
             $table->boolean('is_alive')->default(true);
             $table->boolean('is_admin')->default(false);
+            $table->rememberToken();
+            $table->string('api_token')->nullable();
 
             $table->timestamps();
         });
